@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_package = "io.tokenanalyst.coding.challenge.model";
+
+// Description of the wine.
+message TokenRecord {
+    double rowTime = 1;
+    string rowKey = 2;
+    double blockNumber = 3;
+    int64 minedAt = 4;
+
+    message TX {
+        string blockHash = 1;
+        int64 blockNumber = 2;
+        string fromAddr = 3;
+        int32 gas = 4;
+        int64 gasPrice = 5;
+        string hash = 6;
+        string input = 7;
+        string nonce = 8;
+        string toAddr = 9;
+        int32 transactionIndex = 10;
+        int64 weiValue = 11;
+        int32 v = 12;
+        string r = 13;
+        string s = 14;
+    }
+
+    TX tx = 5;
+
+    message Receipt {
+        string blockHash = 1;
+        int64 blockNumber = 2;
+        string contractAddress = 3;
+        int64 cumulativeGasUsed = 4;
+        string fromAddr = 5;
+        int64 gasUsed = 6;
+        repeated string logs = 7;
+        string logsBloom = 8;
+        int32 status = 9;
+        string toAddr = 10;
+        string transactionHash = 11;
+        int32 transactionIndex = 12;
+    }
+
+    Receipt receipt = 6;
+
+}

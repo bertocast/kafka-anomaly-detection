@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "io.tokenanalyst.coding.challenge.model";
+
+
+// Description of the trained model.
+message ModelDescriptor {
+    // Model name
+    string name = 1;
+    // Human readable description.
+    string description = 2;
+    // Data type for which this model is applied.
+    string dataType = 3;
+    // Moving average
+    double movingAverage = 4;
+    // Moving standard deviation
+    double movingSd = 5;
+}
